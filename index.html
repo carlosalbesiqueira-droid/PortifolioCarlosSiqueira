@@ -165,6 +165,14 @@
             margin-bottom: 25px;
             color: var(--text-sub);
         }
+        
+        /* ESTILO DO BOTÃO DE CURRÍCULO */
+        .hero-btns {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
         .btn-primary {
             display: inline-block;
             padding: 16px 35px;
@@ -178,6 +186,26 @@
         }
         .btn-primary:hover {
             background: #0ea5e9;
+            transform: translateY(-2px);
+        }
+
+        .btn-cv {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 16px 35px;
+            background: transparent;
+            color: var(--accent);
+            font-weight: bold;
+            text-decoration: none;
+            border: 2px solid var(--accent);
+            border-radius: 6px;
+            transition: 0.3s;
+            font-size: 18px;
+        }
+        .btn-cv:hover {
+            background: var(--accent);
+            color: #0f172a;
             transform: translateY(-2px);
         }
 
@@ -455,6 +483,7 @@
             .hero-text h1 { font-size: 45px; }
             .sobre-content { flex-direction: column-reverse; text-align: center; }
             .sobre-texto { text-align: center; min-width: 100%; }
+            .hero-btns { justify-content: center; width: 100%; }
         }
     </style>
 </head>
@@ -477,7 +506,7 @@
             <li><a href="#formacao">Formação</a></li>
             <li><a href="#experiencia">Experiência</a></li>
             <li><a href="#projetos">Projetos</a></li>
-            <li><a href="Carlos_Siqueira_Engenharia_de_Software.pdf" download target="_blank">Currículo</a></li>
+            <li><a href="Carlos_Siqueira_Engenharia_de_Software.pdf" target="_blank" style="color: var(--accent); font-weight: bold;">Currículo PDF</a></li>
             <li>
                 <button class="theme-switch" onclick="toggleTheme()" title="Mudar Tema">
                     <i id="theme-icon" class="fas fa-moon"></i>
@@ -493,7 +522,13 @@
         <hr class="linha-nome">
         <p><b style="color:var(--accent);">Olá! Seja bem-vindo(a) ao meu portfólio.</b></p>
         <p>Atuo na transformação de dados em insights acionáveis para otimização de processos, redução de custos e melhoria de performance operacional. Tenho experiência prática com SQL, Power BI e BigQuery aplicados a ambientes reais de negócio.</p>
-        <a href="#contato" class="btn-primary">Entre em contato</a>
+        
+        <div class="hero-btns">
+            <a href="#contato" class="btn-primary">Entre em contato</a>
+            <a href="Carlos_Siqueira_Engenharia_de_Software.pdf" target="_blank" class="btn-cv">
+                <i class="fas fa-file-pdf"></i> Baixar Currículo
+            </a>
+        </div>
     </div>
 </section>
 
