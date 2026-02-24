@@ -379,7 +379,33 @@
             position: absolute;
             left: 0;
         }
+/* --- Estilos para a Seção de Projetos (Baseado no seu padrão) --- */
 
+.btn-primary {
+    background-color: var(--accent); /* Usa o azul que você já definiu */
+    color: #000;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 6px;
+    font-weight: 700;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 20px;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    font-size: 14px;
+}
+
+.btn-primary:hover {
+    filter: brightness(1.2);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Ajuste para que o título do projeto fique igual ao das ferramentas */
+.card-item h3 {
+    margin-bottom: 10px;
+}
         /* ================== PROJETOS PREMIUM ================== */
 
         .section-projetos {
@@ -614,28 +640,6 @@
     </div>
 </section>
 
-<section class="section-light" id="ferramentas" style="background: var(--section-alt-bg);">
-    <div class="section-title" data-aos="fade-up">Ferramentas de Trabalho</div>
-    <div class="tools-grid">
-        <div class="tool-card" data-aos="zoom-in" data-aos-delay="100">
-            <i class="fas fa-database"></i>
-            <span>SQL</span>
-        </div>
-        <div class="tool-card" data-aos="zoom-in" data-aos-delay="200">
-            <i class="fas fa-cloud"></i>
-            <span>BigQuery</span>
-        </div>
-        <div class="tool-card" data-aos="zoom-in" data-aos-delay="300">
-            <i class="fas fa-mobile-alt"></i>
-            <span>AppSheet</span>
-        </div>
-        <div class="tool-card" data-aos="zoom-in" data-aos-delay="400">
-            <i class="fas fa-table"></i>
-            <span>Google Planilhas</span>
-        </div>
-    </div>
-</section>
-    
 <section class="section-sobre" id="sobre"> 
     <div class="sobre-content">
         <div class="sobre-texto" data-aos="fade-right">
@@ -797,7 +801,42 @@
         </div>
     </div>
 </section>
+<section class="section-projetos" id="projetos">
+    <div class="section-title" data-aos="fade-up">Projetos</div>
+    <div class="projetos-grid">
+        
+        <div class="projeto-card" data-aos="flip-left">
+            <div class="projeto-img-container">
+                <span class="projeto-badge">SQL + APPSHEET</span>
+                <img src="Portif-lioCarlosAlbertoSiqueira/GIC.png" alt="GIC" class="projeto-img">
+                <div class="projeto-overlay">
+                    <p><strong>Impacto:</strong> R$ 497k Recuperados</p>
+                </div>
+            </div>
+            <div class="projeto-info">
+                <h3>GIC - Gestão de Insumos</h3>
+                <p>Auditoria automatizada e proteção de ativos de alto valor.</p>
+                <button class="btn-detalhes" onclick="openModal('modalGIC')">Ver Ficha Técnica</button>
+            </div>
+        </div>
 
+        <div class="projeto-card" data-aos="flip-right">
+            <div class="projeto-img-container">
+                <span class="projeto-badge">BI + GESTÃO</span>
+                <img src="Portif-lioCarlosAlbertoSiqueira/SuporteOut.png" alt="Suporte Out" class="projeto-img">
+                <div class="projeto-overlay">
+                    <p><strong>Foco:</strong> SLA e Performance</p>
+                </div>
+            </div>
+            <div class="projeto-info">
+                <h3>Suporte Out</h3>
+                <p>Gestão inteligente de chamados e monitoramento de SLA.</p>
+                <button class="btn-detalhes" onclick="openModal('modalSuporteOut')">Ver Ficha Técnica</button>
+            </div>
+        </div>
+
+    </div>
+</section>
 <div id="modalGIC" class="modal">
     <div class="modal-content">
         <span class="close-modal" onclick="closeModal('modalGIC')">&times;</span>
@@ -851,12 +890,29 @@
                 <li style="margin-bottom: 8px;">Impacto negativo direto nos indicadores de qualidade e perdas financeiras.</li>
             </ul>
 
-            <h3 style="color: white; border-bottom: 1px solid var(--line); padding-bottom: 5px; margin-top: 30px;">Estrutura Técnica</h3>
-            <p style="margin: 15px 0;"><b>Stack:</b> AppSheet | Google Sheets | Google Chat Automations.</p>
-            <p>Implementação de lógica de priorização automática por ETD e integração de notificações em tempo real para o time de suporte.</p>
+            <h3 style="color: white; border-bottom: 1px solid var(--line); padding-bottom: 5px; margin-top: 30px;">2. Ferramentas Utilizadas</h3>
+            
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 15px; margin: 20px 0;">
+    <div style="background: rgba(255,255,255,0.05); padding: 15px; border-radius: 10px; border: 1px solid var(--line); text-align: center;">
+        <i class="fas fa-mobile-alt" style="color: var(--accent); font-size: 24px; display: block; margin-bottom: 10px;"></i>
+        <span style="font-size: 12px; font-weight: bold; color: var(--text-main);">AppSheet</span>
+    </div>
+    <div style="background: rgba(255,255,255,0.05); padding: 15px; border-radius: 10px; border: 1px solid var(--line); text-align: center;">
+        <i class="fas fa-table" style="color: var(--accent); font-size: 24px; display: block; margin-bottom: 10px;"></i>
+        <span style="font-size: 12px; font-weight: bold; color: var(--text-main);">Google Sheets</span>
+    </div>
+    <div style="background: rgba(255,255,255,0.05); padding: 15px; border-radius: 10px; border: 1px solid var(--line); text-align: center;">
+        <i class="fas fa-comments" style="color: var(--accent); font-size: 24px; display: block; margin-bottom: 10px;"></i>
+        <span style="font-size: 12px; font-weight: bold; color: var(--text-main);">Chat Automation</span>
+    </div>
+</div>
 
-            <h3 style="color: white; border-bottom: 1px solid var(--line); padding-bottom: 5px; margin-top: 30px;">Impacto e Diferenciais</h3>
-            <p style="margin: 15px 0;">Redução drástica de perdas via análise de causa raiz e fila de atendimento organizada por criticidade de saída de carga.</p>
+<h3 style="color: white; border-bottom: 1px solid var(--line); padding-bottom: 5px; margin-top: 30px;">3. Impacto e Diferenciais</h3>
+            <div style="background: rgba(56, 189, 248, 0.05); padding: 15px; border-radius: 8px; border-left: 4px solid var(--accent); margin-top: 15px;">
+                <p style="margin-bottom: 10px;">• <b>Priorização Inteligente:</b> Implementação de lógica automática por <b>ETD</b> (Estimated Time of Departure).</p>
+                <p style="margin-bottom: 10px;">• <b>Comunicação em Tempo Real:</b> Integração de notificações automáticas para o time operacional.</p>
+                <p>• <b>Redução de Perdas:</b> Minimização drástica de avarias através da análise de causa raiz na fila de atendimento.</p>
+            </div>
         </div>
     </div>
 </div>
@@ -922,4 +978,5 @@
 
 </body>
 </html>
+
 
