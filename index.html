@@ -868,7 +868,21 @@
                 <li style="margin-bottom: 10px;"><b>Identidade Única (PL ID):</b> Lógica desenvolvida para monitorar o ciclo de vida e localização exata de cada pallet individualmente.</li>
                 <li style="margin-bottom: 10px;"><b>Auditoria Automatizada:</b> Queries SQL para cálculo de Aging e validação cruzada de Notas Fiscais em tempo real.</li>
             </ul>
-
+<h3 style="color: white; border-bottom: 1px solid var(--line); padding-bottom: 5px; margin-top: 30px;">Ferramentas Utilizadas</h3>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 15px; margin: 20px 0;">
+    <div style="background: rgba(255,255,255,0.05); padding: 15px; border-radius: 10px; border: 1px solid var(--line); text-align: center;">
+        <i class="fas fa-mobile-alt" style="color: var(--accent); font-size: 24px; display: block; margin-bottom: 10px;"></i>
+        <span style="font-size: 12px; font-weight: bold; color: var(--text-main);">AppSheet</span>
+    </div>
+    <div style="background: rgba(255,255,255,0.05); padding: 15px; border-radius: 10px; border: 1px solid var(--line); text-align: center;">
+        <i class="fas fa-database" style="color: var(--accent); font-size: 24px; display: block; margin-bottom: 10px;"></i>
+        <span style="font-size: 12px; font-weight: bold; color: var(--text-main);">Cloud SQL</span>
+    </div>
+    <div style="background: rgba(255,255,255,0.05); padding: 15px; border-radius: 10px; border: 1px solid var(--line); text-align: center;">
+        <i class="fas fa-cloud" style="color: var(--accent); font-size: 24px; display: block; margin-bottom: 10px;"></i>
+        <span style="font-size: 12px; font-weight: bold; color: var(--text-main);">BigQuery</span>
+    </div>
+</div>
             <h3 style="color: white; border-bottom: 1px solid var(--line); padding-bottom: 5px; margin-top: 30px;">3. Resultados e ROI</h3>
             <p style="margin: 15px 0;">A solução sanou inconsistências em <b>35,3% do estoque total</b>, representando um impacto financeiro positivo de <b>R$ 497.540,25</b> em materiais auditados e corrigidos, além da implantação de FIFO para eliminação de desperdício por vencimento.</p>
         </div>
@@ -907,11 +921,12 @@
     </div>
 </div>
 
-<h3 style="color: white; border-bottom: 1px solid var(--line); padding-bottom: 5px; margin-top: 30px;">3. Impacto e Diferenciais</h3>
-            <div style="background: rgba(56, 189, 248, 0.05); padding: 15px; border-radius: 8px; border-left: 4px solid var(--accent); margin-top: 15px;">
-                <p style="margin-bottom: 10px;">• <b>Priorização Inteligente:</b> Implementação de lógica automática por <b>ETD</b> (Estimated Time of Departure).</p>
-                <p style="margin-bottom: 10px;">• <b>Comunicação em Tempo Real:</b> Integração de notificações automáticas para o time operacional.</p>
-                <p>• <b>Redução de Perdas:</b> Minimização drástica de avarias através da análise de causa raiz na fila de atendimento.</p>
+<h3 style="color: white; border-bottom: 1px solid var(--line); padding-bottom: 5px; margin-top: 30px;">3. Impacto e Engenharia do Bot</h3>
+<div style="background: rgba(56, 189, 248, 0.05); padding: 15px; border-radius: 8px; border-left: 4px solid var(--accent); margin-top: 15px;">
+    <p style="margin-bottom: 10px;">• <b>Mensageria Automatizada:</b> Desenvolvimento de um bot integrado ao <b>Google Chat</b> que dispara alertas instantâneos para o time operacional sempre que um chamado crítico é registrado.</p>
+    <p style="margin-bottom: 10px;">• <b>Priorização via Bot:</b> A automação analisa o <b>ETD</b> e notifica o responsável em tempo real, eliminando a necessidade de conferência manual de planilhas e reduzindo o tempo de resposta.</p>
+    <p>• <b>Redução de Perdas:</b> O bot garante que nenhuma carga crítica seja esquecida, resultando na redução drástica de avarias e no cumprimento rigoroso do SLA de atendimento.</p>
+</div>
             </div>
         </div>
     </div>
@@ -978,5 +993,6 @@
 
 </body>
 </html>
+
 
 
