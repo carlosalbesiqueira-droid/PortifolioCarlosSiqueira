@@ -9,7 +9,7 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
     <style>
-        /* ===== VARIÁVEIS DE TEMA (MODO DARK/LIGHT) ===== */
+        /* ===== VARIÁVEIS DE TEMA ===== */
         :root {
             --bg-body: #0f172a;
             --bg-header: #0f172a;
@@ -23,7 +23,6 @@
             --section-alt-bg: #f1f5f9;
         }
 
-        /* Cores quando o modo Light estiver ativo */
         body.light-mode {
             --bg-body: #f8fafc;
             --bg-header: #ffffff;
@@ -47,431 +46,106 @@
             padding-top: 80px;
         }
 
-        /* BARRA DE PROGRESSO DE LEITURA */
-        .progress-container {
-            position: fixed;
-            top: 0;
-            z-index: 2100;
-            width: 100%;
-            height: 4px;
-            background: transparent;
-        }
-        .progress-bar {
-            height: 4px;
-            background: var(--accent);
-            width: 0%;
-        }
+        .progress-container { position: fixed; top: 0; z-index: 2100; width: 100%; height: 4px; background: transparent; }
+        .progress-bar { height: 4px; background: var(--accent); width: 0%; }
 
-        /* ===== HEADER / NAVBAR ===== */
+        /* ===== HEADER ===== */
         header {
-            width: 100%;
-            height: 80px;
-            background: var(--bg-header);
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 0 8%;
-            position: fixed;
-            top: 0;
-            left: 0;
-            z-index: 1000;
+            width: 100%; height: 80px; background: var(--bg-header);
+            display: flex; align-items: center; justify-content: space-between;
+            padding: 0 8%; position: fixed; top: 0; left: 0; z-index: 1000;
             border-bottom: 1px solid rgba(255, 255, 255, 0.05);
         }
 
-        .logo-area {
-            font-size: 20px;
-            font-weight: bold;
-            color: var(--text-main);
-            line-height: 1.2;
-        }
+        .logo-area { font-size: 20px; font-weight: bold; color: var(--text-main); line-height: 1.2; }
+        .logo-area span { color: var(--accent); font-size: 13px; display: block; text-transform: uppercase; font-weight: 400; letter-spacing: 1px; }
 
-        .logo-area span {
-            color: var(--accent);
-            font-size: 13px;
-            display: block;
-            text-transform: uppercase;
-            font-weight: 400;
-            letter-spacing: 1px;
-        }
+        nav ul { display: flex; list-style: none; gap: 35px; align-items: center; }
+        nav ul li a { text-decoration: none; color: var(--text-main); font-size: 15px; font-weight: 500; transition: 0.3s; }
+        nav ul li a:hover { color: var(--accent); }
 
-        nav ul {
-            display: flex;
-            list-style: none;
-            gap: 35px;
-            align-items: center;
-        }
-
-        nav ul li a {
-            text-decoration: none;
-            color: var(--text-main);
-            font-size: 15px;
-            font-weight: 500;
-            transition: 0.3s;
-        }
-
-        nav ul li a:hover {
-            color: var(--accent);
-        }
-
-        /* BOTÃO SWITCH DE TEMA */
         .theme-switch {
-            background: none;
-            border: 1px solid var(--line);
-            color: var(--text-main);
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 18px;
-            margin-left: 10px;
+            background: none; border: 1px solid var(--line); color: var(--text-main);
+            width: 40px; height: 40px; border-radius: 50%; cursor: pointer;
+            display: flex; align-items: center; justify-content: center; font-size: 18px; margin-left: 10px;
         }
 
-        /* ===== HERO SECTION ===== */
+        /* ===== HERO ===== */
         .hero {
             background: linear-gradient(135deg, #1e293b, #0f172a);
             min-height: calc(100vh - 80px);
-            display: flex;
-            align-items: center;
-            justify-content: center; 
-            padding: 80px 8%;
+            display: flex; align-items: center; justify-content: center; padding: 80px 8%;
         }
         body.light-mode .hero { background: linear-gradient(135deg, #e2e8f0, #f8fafc); }
 
-        .hero-text {
-            max-width: 900px; 
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start; 
-        }
-        .hero-text h1 {
-            font-size: 64px;
-            margin-bottom: 0;
-            letter-spacing: 2px;
-            font-weight: bold;
-        }
-        .linha-nome {
-            width: 100%; 
-            height: 1px;
-            background-color: var(--line);
-            border: none;
-            margin-top: 5px;
-            margin-bottom: 30px;
-        }
-        .hero-text p {
-            font-size: 22px;
-            margin-bottom: 25px;
-            color: var(--text-sub);
-        }
+        .hero-text { max-width: 900px; display: flex; flex-direction: column; align-items: flex-start; }
+        .hero-text h1 { font-size: 64px; margin-bottom: 0; letter-spacing: 2px; font-weight: bold; }
+        .linha-nome { width: 100%; height: 1px; background-color: var(--line); border: none; margin-top: 5px; margin-bottom: 30px; }
+        .hero-text p { font-size: 22px; margin-bottom: 25px; color: var(--text-sub); }
         
-        /* ESTILO DO BOTÃO DE CURRÍCULO */
-        .hero-btns {
-            display: flex;
-            gap: 20px;
-            flex-wrap: wrap;
-        }
+        .hero-btns { display: flex; gap: 20px; flex-wrap: wrap; }
+        .btn-primary { display: inline-block; padding: 16px 35px; background: var(--accent); color: #0f172a; font-weight: bold; text-decoration: none; border-radius: 6px; transition: 0.3s; font-size: 18px; }
+        .btn-primary:hover { background: #0ea5e9; transform: translateY(-2px); }
 
-        .btn-primary {
-            display: inline-block;
-            padding: 16px 35px;
-            background: var(--accent);
-            color: #0f172a;
-            font-weight: bold;
-            text-decoration: none;
-            border-radius: 6px;
-            transition: 0.3s;
-            font-size: 18px;
-        }
-        .btn-primary:hover {
-            background: #0ea5e9;
-            transform: translateY(-2px);
-        }
+        .btn-cv { display: inline-flex; align-items: center; gap: 10px; padding: 16px 35px; background: transparent; color: var(--accent); font-weight: bold; text-decoration: none; border: 2px solid var(--accent); border-radius: 6px; transition: 0.3s; font-size: 18px; }
+        .btn-cv:hover { background: var(--accent); color: #0f172a; transform: translateY(-2px); }
 
-        .btn-cv {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            padding: 16px 35px;
-            background: transparent;
-            color: var(--accent);
-            font-weight: bold;
-            text-decoration: none;
-            border: 2px solid var(--accent);
-            border-radius: 6px;
-            transition: 0.3s;
-            font-size: 18px;
-        }
-        .btn-cv:hover {
-            background: var(--accent);
-            color: #0f172a;
-            transform: translateY(-2px);
-        }
+        /* ===== SEÇÕES ===== */
+        .section-sobre { background: var(--bg-body); padding: 100px 8%; }
+        .sobre-content { display: flex; align-items: center; gap: 60px; flex-wrap: wrap; justify-content: space-between; }
+        .sobre-texto { flex: 1; min-width: 400px; text-align: right; }
+        .sobre-texto h2 { font-size: 28px; text-transform: uppercase; letter-spacing: 3px; margin-bottom: 10px; color: var(--text-main); }
+        .linha-sobre { width: 100%; height: 1px; background-color: var(--line); margin-bottom: 30px; border: none; }
+        .subtitulo-enfase { font-size: 20px; font-style: italic; color: var(--text-sub); margin-bottom: 30px; display: block; line-height: 1.4; }
+        .sobre-texto p { font-size: 17px; color: var(--text-sub); margin-bottom: 20px; text-align: justify; direction: rtl; unicode-bidi: plaintext; }
+        .sobre-foto img { width: 380px; height: 380px; object-fit: cover; border-radius: 50%; background: radial-gradient(circle, #075985 0%, transparent 70%); padding: 15px; transition: 0.5s ease; }
+        .sobre-foto img:hover { transform: scale(1.05); }
 
-        /* ===== SEÇÃO SOBRE MIM ===== */
-        .section-sobre {
-            background: var(--bg-body);
-            padding: 100px 8%;
-        }
-        .sobre-content {
-            display: flex;
-            align-items: center;
-            gap: 60px;
-            flex-wrap: wrap;
-            justify-content: space-between;
-        }
-        .sobre-texto { 
-            flex: 1; 
-            min-width: 400px; 
-            text-align: right; 
-        }
-        .sobre-texto h2 {
-            font-size: 28px;
-            text-transform: uppercase;
-            letter-spacing: 3px;
-            margin-bottom: 10px;
-            color: var(--text-main);
-        }
-        .linha-sobre {
-            width: 100%;
-            height: 1px;
-            background-color: var(--line);
-            margin-bottom: 30px;
-            border: none;
-        }
-        .subtitulo-enfase {
-            font-size: 20px;
-            font-style: italic;
-            color: var(--text-sub);
-            margin-bottom: 30px;
-            display: block;
-            line-height: 1.4;
-        }
-        .sobre-texto p {
-            font-size: 17px;
-            color: var(--text-sub);
-            margin-bottom: 20px;
-            text-align: justify; 
-            direction: rtl; 
-            unicode-bidi: plaintext;
-        }
-        .sobre-foto img {
-            width: 380px;
-            height: 380px;
-            object-fit: cover;
-            border-radius: 50%;
-            background: radial-gradient(circle, #075985 0%, transparent 70%);
-            padding: 15px;
-            transition: 0.5s ease;
-        }
-        .sobre-foto img:hover {
-            transform: scale(1.05);
-        }
+        .impacto-box { background: rgba(56, 189, 248, 0.1); border-left: 4px solid var(--accent); padding: 20px; margin-top: 20px; text-align: left; }
+        .impacto-box h4 { color: var(--accent); margin-bottom: 8px; text-transform: uppercase; font-size: 16px; }
 
-        /* ===== ESTILO EXPERIÊNCIA ===== */
-        .impacto-box {
-            background: rgba(56, 189, 248, 0.1);
-            border-left: 4px solid var(--accent);
-            padding: 20px;
-            margin-top: 20px;
-            text-align: left;
-        }
-        .impacto-box h4 {
-            color: var(--accent);
-            margin-bottom: 8px;
-            text-transform: uppercase;
-            font-size: 16px;
-        }
-        .exp-lista {
-            list-style: none;
-            margin-top: 15px;
-        }
-        .exp-lista li {
-            font-size: 16px;
-            color: var(--text-sub);
-            margin-bottom: 10px;
-            position: relative;
-            padding-left: 25px;
-        }
-        .exp-lista li::before {
-            content: "\f00c";
-            font-family: "Font Awesome 6 Free";
-            font-weight: 900;
-            position: absolute;
-            left: 0;
-            color: var(--accent);
-        }
+        .section-light { background: var(--section-light-bg); color: var(--card-text); padding: 80px 8%; text-align: center; }
+        .section-title { font-size: 32px; margin-bottom: 40px; border-bottom: 2px solid var(--accent); display: inline-block; text-transform: uppercase; }
 
-        /* ===== SEÇÕES LIGHT ===== */
-        .section-light {
-            background: var(--section-light-bg);
-            color: var(--card-text);
-            padding: 80px 8%;
-            text-align: center;
-        }
-        .section-title {
-            font-size: 32px;
-            margin-bottom: 40px;
-            border-bottom: 2px solid var(--accent);
-            display: inline-block;
-            text-transform: uppercase;
-        }
-        .habilidades-container, .cursos-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 30px;
-            text-align: left;
-            margin-top: 40px;
-        }
-        .card-item {
-            background: var(--card-bg);
-            padding: 25px;
-            border-radius: 8px;
-            border-left: 4px solid var(--accent);
-            transition: 0.3s;
-        }
-        body.light-mode .card-item { border: 1px solid #e2e8f0; border-left: 4px solid var(--accent); }
+        .card-item { background: var(--card-bg); padding: 25px; border-radius: 8px; border-left: 4px solid var(--accent); transition: 0.3s; margin-bottom: 20px; text-align: left;}
+        .card-item h3 { color: #0f172a; font-size: 17px; text-transform: uppercase; margin-bottom: 15px; font-weight: 700; }
+        .card-item ul { list-style: none; }
+        .card-item ul li { font-size: 15px; margin-bottom: 12px; position: relative; padding-left: 20px; color: #334155; }
+        .card-item ul li::before { content: "•"; color: var(--accent); font-weight: bold; position: absolute; left: 0; }
 
-        .card-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-        }
-        .card-item h3 {
-            color: #0f172a;
-            font-size: 17px;
-            text-transform: uppercase;
-            margin-bottom: 15px;
-            font-weight: 700;
-        }
-        .card-item ul {
-            list-style: none;
-        }
-        .card-item ul li {
-            font-size: 15px;
-            margin-bottom: 12px;
-            position: relative;
-            padding-left: 20px;
-            color: #334155;
-            line-height: 1.4;
-        }
-        .card-item ul li::before {
-            content: "•";
-            color: var(--accent);
-            font-weight: bold;
-            position: absolute;
-            left: 0;
-        }
+        .habilidades-container, .cursos-container, .projetos-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; margin-top: 40px; }
 
-        /* ===== SEÇÃO PROJETOS ===== */
-        .section-projetos {
-            background: var(--bg-body);
-            padding: 80px 8%;
-            text-align: center;
-        }
-        .projetos-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
-        }
-        .projeto-card {
-            background: var(--bg-header);
-            border-radius: 12px;
-            overflow: hidden;
-            border: 1px solid rgba(56, 189, 248, 0.1);
-            transition: 0.3s;
-            display: flex;
-            flex-direction: column;
-            text-align: left;
-        }
-        .projeto-card:hover {
-            transform: translateY(-10px);
-            border-color: var(--accent);
-        }
-        .projeto-img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-            border-bottom: 2px solid var(--accent);
-        }
-        .projeto-info {
-            padding: 25px;
-        }
-        .projeto-info h3 {
-            color: var(--text-main);
-            margin-bottom: 15px;
-            text-transform: uppercase;
-        }
-        .projeto-info p {
-            color: var(--text-sub);
-            font-size: 14px;
-            margin-bottom: 20px;
-        }
-        .btn-detalhes {
-            display: inline-block;
-            padding: 10px 20px;
-            background: transparent;
-            color: var(--accent);
-            border: 1px solid var(--accent);
-            border-radius: 4px;
-            font-weight: bold;
-            cursor: pointer;
-            transition: 0.3s;
-        }
-        .btn-detalhes:hover {
-            background: var(--accent);
-            color: #0f172a;
-        }
+        /* ===== PROJETOS ===== */
+        .section-projetos { background: var(--bg-body); padding: 80px 8%; text-align: center; }
+        .projeto-card { background: var(--bg-header); border-radius: 12px; overflow: hidden; border: 1px solid rgba(56, 189, 248, 0.1); transition: 0.3s; display: flex; flex-direction: column; text-align: left; }
+        .projeto-card:hover { transform: translateY(-10px); border-color: var(--accent); }
+        .projeto-img { width: 100%; height: 200px; object-fit: cover; border-bottom: 2px solid var(--accent); }
+        .projeto-info { padding: 25px; }
+        .projeto-info h3 { color: var(--text-main); margin-bottom: 15px; text-transform: uppercase; }
+        .projeto-info p { color: var(--text-sub); font-size: 14px; margin-bottom: 20px; }
+        .btn-detalhes { display: inline-block; padding: 10px 20px; background: transparent; color: var(--accent); border: 1px solid var(--accent); border-radius: 4px; font-weight: bold; cursor: pointer; transition: 0.3s; }
+        .btn-detalhes:hover { background: var(--accent); color: #0f172a; }
 
         /* ===== MODAL ===== */
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 3000;
-            left: 0; top: 0;
-            width: 100%; height: 100%;
-            background-color: rgba(0,0,0,0.9);
-            overflow-y: auto;
-        }
-        .modal-content {
-            background-color: #0f172a;
-            margin: 5% auto;
-            padding: 40px;
-            border: 1px solid var(--accent);
-            width: 85%;
-            max-width: 900px;
-            border-radius: 12px;
-            color: #cbd5f5;
-        }
-        .close-modal {
-            color: var(--accent);
-            float: right;
-            font-size: 28px;
-            font-weight: bold;
-            cursor: pointer;
-        }
+        .modal { display: none; position: fixed; z-index: 3000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.95); overflow-y: auto; }
+        .modal-content { background-color: #0f172a; margin: 2% auto; padding: 0; border: 1px solid var(--accent); width: 90%; max-width: 1000px; border-radius: 12px; color: #cbd5f5; overflow: hidden; box-shadow: 0 0 30px rgba(56, 189, 248, 0.2); }
+        .modal-header { background: linear-gradient(90deg, #1e293b, #0f172a); padding: 30px; border-bottom: 1px solid var(--line); }
+        .modal-header h2 { color: var(--accent); font-size: 28px; margin-bottom: 5px; }
+        .modal-body { padding: 40px; }
+        .modal-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-bottom: 30px; }
+        .modal-section { background: rgba(255,255,255,0.03); padding: 20px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.05); }
+        .modal-section h3 { color: var(--accent); font-size: 18px; margin-bottom: 15px; display: flex; align-items: center; gap: 10px; text-transform: uppercase; }
+        .modal-section ul { list-style: none; }
+        .modal-section ul li { margin-bottom: 10px; font-size: 15px; position: relative; padding-left: 20px; }
+        .modal-section ul li::before { content: "→"; position: absolute; left: 0; color: var(--accent); }
+        .tag-tech { display: inline-block; background: rgba(56, 189, 248, 0.15); color: var(--accent); padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: bold; margin-right: 8px; margin-top: 10px; border: 1px solid var(--accent); }
+        .close-modal { color: #fff; float: right; font-size: 35px; cursor: pointer; margin-top: -10px; }
+        .close-modal:hover { color: var(--accent); }
 
         /* ===== CONTATO ===== */
         .contato { text-align: center; padding: 80px 8%; background: var(--bg-header); }
-        .social-buttons {
-            margin-top: 40px;
-            display: flex;
-            justify-content: center;
-            gap: 25px;
-        }
-        .social-icon {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 65px;
-            height: 65px;
-            border-radius: 50%;
-            color: white;
-            font-size: 30px;
-            text-decoration: none;
-            transition: 0.3s;
-        }
+        .social-buttons { margin-top: 40px; display: flex; justify-content: center; gap: 25px; }
+        .social-icon { display: flex; align-items: center; justify-content: center; width: 65px; height: 65px; border-radius: 50%; color: white; font-size: 30px; text-decoration: none; transition: 0.3s; }
         .social-icon:hover { transform: translateY(-5px); filter: brightness(1.2); }
         .btn-linkedin { background: #0077b5; }
         .btn-whatsapp { background: #25d366; }
@@ -483,7 +157,7 @@
             .hero-text h1 { font-size: 45px; }
             .sobre-content { flex-direction: column-reverse; text-align: center; }
             .sobre-texto { text-align: center; min-width: 100%; }
-            .hero-btns { justify-content: center; width: 100%; }
+            .modal-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -492,11 +166,7 @@
 <div class="progress-container"><div class="progress-bar" id="myBar"></div></div>
 
 <header>
-    <div class="logo-area">
-        Carlos Siqueira
-        <span>Análise de Dados</span>
-    </div>
-
+    <div class="logo-area">Carlos Siqueira <span>Análise de Dados</span></div>
     <nav>
         <ul>
             <li><a href="#">Home</a></li>
@@ -507,11 +177,7 @@
             <li><a href="#experiencia">Experiência</a></li>
             <li><a href="#projetos">Projetos</a></li>
             <li><a href="Carlos_Siqueira_Engenharia_de_Software.pdf" target="_blank" style="color: var(--accent); font-weight: bold;">Currículo PDF</a></li>
-            <li>
-                <button class="theme-switch" onclick="toggleTheme()" title="Mudar Tema">
-                    <i id="theme-icon" class="fas fa-moon"></i>
-                </button>
-            </li>
+            <li><button class="theme-switch" onclick="toggleTheme()"><i id="theme-icon" class="fas fa-moon"></i></button></li>
         </ul>
     </nav>
 </header>
@@ -522,12 +188,9 @@
         <hr class="linha-nome">
         <p><b style="color:var(--accent);">Olá! Seja bem-vindo(a) ao meu portfólio.</b></p>
         <p>Atuo na transformação de dados em insights acionáveis para otimização de processos, redução de custos e melhoria de performance operacional. Tenho experiência prática com SQL, Power BI e BigQuery aplicados a ambientes reais de negócio.</p>
-        
         <div class="hero-btns">
             <a href="#contato" class="btn-primary">Entre em contato</a>
-            <a href="Carlos_Siqueira_Engenharia_de_Software.pdf" target="_blank" class="btn-cv">
-                <i class="fas fa-file-pdf"></i> Baixar Currículo
-            </a>
+            <a href="Carlos_Siqueira_Engenharia_de_Software.pdf" target="_blank" class="btn-cv"><i class="fas fa-file-pdf"></i> Baixar Currículo</a>
         </div>
     </div>
 </section>
@@ -538,130 +201,57 @@
             <h2>Sobre Mim</h2>
             <hr class="linha-sobre">
             <span class="subtitulo-enfase">Transformo dados em estratégias inteligentes para impulsionar negócios com inovação.</span>
-            <p>Sou natural de <b>Pouso Alegre</b> e fui criado em <b>São Bernardo do Campo</b>, onde tive meus primeiros contatos com tecnologia ainda no ensino fundamental. Durante esse período, participei de aulas práticas de lógica de programação com Scratch, desenvolvendo atividades como construção de labirintos e circuitos — experiências que despertaram meu interesse por tecnologia e resolução de problemas desde cedo.</p>
-            <p>Posteriormente, já em <b>Bragança Paulista</b>, aprofundei esse interesse ao cursar Hardware e Robótica na Microcamp, consolidando minha base técnica e prática.</p>
-            <p>Minha primeira experiência profissional ocorreu no <b>Mercado Livre</b>, em ambiente logístico de alta escala, onde passei a atuar diretamente com dados, automação de processos e sistemas corporativos. Foi nesse contexto que desenvolvi minha afinidade por análise de dados, construção de indicadores e melhoria da eficiência operacional.</p>
-            <p>Atualmente, curso <b>Engenharia de Software pela Universidade São Francisco</b>, integrando formação acadêmica e experiência prática para evoluir como profissional de Dados orientado à tomada de decisão baseada em evidências.</p>
+            <p>Sou natural de <b>Pouso Alegre</b> e fui criado em <b>São Bernardo do Campo</b>. Iniciei minha trajetória tecnológica ainda no ensino fundamental com Scratch e Robótica.</p>
+            <p>Minha experiência no <b>Mercado Livre</b> consolidou meu interesse em análise de dados operacionais e automação de processos em larga escala.</p>
+            <p>Atualmente curso <b>Engenharia de Software</b>, unindo teoria acadêmica à prática analítica para tomada de decisão orientada a dados.</p>
         </div>
-        <div class="sobre-foto" data-aos="zoom-in">
-            <img src="ImagemPortifolio.png" alt="Carlos Alberto Siqueira">
-        </div>
+        <div class="sobre-foto" data-aos="zoom-in"><img src="ImagemPortifolio.png" alt="Carlos Alberto Siqueira"></div>
     </div>
 </section>
 
 <section class="section-light" id="competencias"> 
     <div class="section-title" data-aos="fade-up">COMPETÊNCIAS TÉCNICAS</div>
     <div class="habilidades-container">
-        <div class="card-item" data-aos="fade-up" data-aos-delay="100">
-            <h3>ANÁLISE E MANIPULAÇÃO DE DADOS</h3>
-            <ul>
-                <li><strong>SQL:</strong> Consultas complexas, tratamento e exploração de dados, otimização de consultas</li>
-                <li><strong>Python:</strong> Análise e automação de processos de dados</li>
-                <li><strong>BigQuery:</strong> Consultas analíticas em grandes volumes de dados</li>
-            </ul>
+        <div class="card-item" data-aos="fade-up">
+            <h3>ANÁLISE E SQL</h3>
+            <ul><li><strong>SQL:</strong> CTEs, modelagem e otimização</li><li><strong>BigQuery:</strong> Data Warehouse e Analytics</li><li><strong>Python:</strong> Automação de Dados</li></ul>
         </div>
-
-        <div class="card-item" data-aos="fade-up" data-aos-delay="200">
-            <h3>BUSINESS INTELLIGENCE E VISUALIZAÇÃO</h3>
-            <ul>
-                <li><strong>Excel Avançado:</strong> Modelagem de indicadores e automação de análises</li>
-                <li><strong>Power BI:</strong> Modelagem de dados, DAX e construção de dashboards operacionais e executivos</li>
-                <li><strong>Sistemas Corporativos:</strong> Extração e organização de dados de sistemas (ERP e SAP)</li>
-            </ul>
+        <div class="card-item" data-aos="fade-up">
+            <h3>BI E VISUALIZAÇÃO</h3>
+            <ul><li><strong>Power BI:</strong> Dashboards e DAX</li><li><strong>Excel:</strong> Modelagem avançada</li><li><strong>Sistemas:</strong> ERP, SAP e AppSheet</li></ul>
         </div>
-
-        <div class="card-item" data-aos="fade-up" data-aos-delay="300">
-            <h3>DESENVOLVIMENTO WEB (EM ANDAMENTO)</h3>
-            <ul>
-                <li><strong>HTML:</strong> Estruturação e organização de páginas web</li>
-                <li><strong>JavaScript:</strong> Lógica de programação e interatividade em aplicações web</li>
-            </ul>
-        </div>
-
-        <div class="card-item" data-aos="fade-up" data-aos-delay="400">
-            <h3>MELHORIA CONTÍNUA E PROCESSOS</h3>
-            <ul>
-                <li><strong>White Belt em Melhoria Contínua / Lean:</strong> Eficiência e análise de causa raiz</li>
-                <li><strong>Ferramentas:</strong> Lean, 5 Porquês e Ishikawa</li>
-                <li><strong>Idiomas:</strong> Inglês técnico para leitura de documentação</li>
-            </ul>
+        <div class="card-item" data-aos="fade-up">
+            <h3>MELHORIA CONTÍNUA</h3>
+            <ul><li><strong>Metodologias:</strong> Lean, Ishikawa e 5 Porquês</li><li><strong>Certificação:</strong> White Belt (Mercado Livre)</li></ul>
         </div>
     </div>
 </section>
 
-<section class="section-light" id="softskills" style="background-color: var(--section-alt-bg);"> 
-    <div class="section-title" data-aos="fade-up">Habilidades Comportamentais e Interpessoais</div>
-    <div class="habilidades-container">
-        <div class="card-item" style="background: var(--card-bg);" data-aos="zoom-in">
-            <h3>Destaques</h3>
-            <ul>
-                <li><strong>Pensamento Analítico:</strong> Capacidade de interpretar dados, identificar padrões e apoiar decisões</li>
-                <li><strong>Resolução de Problemas:</strong> Abordagem estruturada para investigação de causas e soluções eficazes</li>
-                <li><strong>Organização e Gestão de Prioridades:</strong> Planejamento de atividades com foco em eficiência e prazos</li>
-                <li><strong>Comunicação Clara:</strong> Tradução de informações técnicas para diferentes públicos</li>
-                <li><strong>Aprendizado Contínuo:</strong> Evolução constante em ferramentas e metodologias</li>
-                <li><strong>Trabalho em Equipe:</strong> Colaboração em ambientes multidisciplinares</li>
-                <li><strong>Proatividade:</strong> Identificação de oportunidades de melhoria e automação de processos</li>
-                <li><strong>Atenção a Detalhes:</strong> Precisão na análise e validação de dados</li>
-            </ul>
-        </div>
-    </div>
-</section>
-
-<section class="section-light" id="formacao"> 
-    <div class="section-title" data-aos="fade-up">CURSOS E FORMAÇÕES</div>
-    <div class="cursos-container">
-        <div class="card-item" data-aos="fade-right">
-            <h3>CERTIFICAÇÕES</h3>
-            <ul>
-                <li>Excel Avançado — Hashtag Treinamentos — (2025 - 2026)</li>
-                <li>SQL Avançado — Hashtag Treinamentos — (2025 - 2026)</li>
-                <li>Algoritmos e Lógica de Programação — Hashtag Treinamentos — (2026)</li>
-                <li>Comunicação Eficaz — Hashtag Treinamentos — (2026)</li>
-                <li>Lean Six Sigma White Belt — Mercado Livre — (2025)</li>
-                <li>Hardware e Robótica — Microcamp — (2018–2020)</li>
-            </ul>
-        </div>
-    </div>
-</section>
-
-<section class="section-sobre" id="experiencia" style="background: var(--bg-body); border-top: 1px solid var(--line);"> 
+<section class="section-sobre" id="experiencia" style="border-top: 1px solid var(--line);"> 
     <div class="sobre-content" style="flex-direction: row-reverse;">
         <div class="sobre-texto" style="text-align: left;" data-aos="fade-left">
             <h2>Experiência Profissional</h2>
             <hr class="linha-sobre">
             <span class="subtitulo-enfase" style="color: #f59e0b;">Mercado Livre | fev/2024 – jan/2026</span>
-            <p><strong>Jovem Aprendiz → ICQA / Execution REP</strong><br>
-            Análise de Dados Operacionais e Controle de Estoque</p>
-             
-            <ul class="exp-lista">
-                <li>Analisei dados de consumo e movimentação de materiais para monitoramento de acuracidade entre estoque físico e sistêmico.</li>
-                <li>Desenvolvi relatórios e indicadores operacionais para suporte às áreas de Compras, Material Flow e Planejamento (S&OP).</li>
-                <li>Apoiei o controle e validação de notas fiscais com foco em consistência de dados e rastreabilidade de informações.</li>
-                <li>Identifiquei padrões de divergência e oportunidades de melhoria no processo de abastecimento de materiais.</li>
-                <li>Atuou na interface entre áreas operacionais e planejamento para ajuste de pedidos e níveis de estoque.</li>
-            </ul>
-
+            <p><strong>ICQA / Execution REP</strong><br>Análise de Dados Operacionais e Controle de Estoque</p>
             <div class="impacto-box">
                 <h4>Resultados e Impacto</h4>
-                <p>• Redução de 35% nas divergências entre estoque físico e sistêmico por meio de análise e acompanhamento de indicadores operacionais.</p>
-                <p>• Melhoria da acuracidade de dados utilizados no planejamento de compras e controle de consumo.</p>
+                <p>• Redução de 35% nas divergências de estoque por meio de análises SQL e monitoramento de KPIs.</p>
+                <p>• Automação de relatórios de materiais Flow e Planejamento (S&OP).</p>
             </div>
         </div>
-        <div class="sobre-foto" data-aos="fade-right">
-            <img src="Portif-lioCarlosAlbertoSiqueira/MercadoLivre.png" alt="Mercado Livre" style="object-fit: contain; padding: 40px;">
-        </div>
+        <div class="sobre-foto" data-aos="fade-right"><img src="Portif-lioCarlosAlbertoSiqueira/MercadoLivre.png" alt="Mercado Livre" style="object-fit: contain; padding: 40px;"></div>
     </div>
 </section>
 
 <section class="section-projetos" id="projetos">
-    <div class="section-title" style="color: var(--text-main); border-color: var(--accent);" data-aos="fade-up">Projetos</div>
+    <div class="section-title" data-aos="fade-up">Projetos em Destaque</div>
     <div class="projetos-grid">
         <div class="projeto-card" data-aos="flip-left">
             <img src="Portif-lioCarlosAlbertoSiqueira/GIC.png" alt="GIC" class="projeto-img">
             <div class="projeto-info">
                 <h3>GIC - Gestão de Insumos</h3>
-                <p>Sistema de Gestão de Insumos Consumíveis utilizando AppSheet e SQL/BigQuery. Controle de pallet ID e estoque por endereço.</p>
+                <p>Sistema completo de rastreabilidade e modelagem de estoque (+/-/ =) via BigQuery e SQL.</p>
                 <button class="btn-detalhes" onclick="openModal('modalGIC')">Ver Ficha Técnica</button>
             </div>
         </div>
@@ -669,7 +259,7 @@
             <img src="Portif-lioCarlosAlbertoSiqueira/SuporteOut.png" alt="SuporteOut" class="projeto-img">
             <div class="projeto-info">
                 <h3>SuporteOut - Gestão de Chamados</h3>
-                <p>Padronização e priorização de chamados de suporte outbound para redução de avarias e controle rigoroso de SLA/ETD.</p>
+                <p>Padronização de suporte logístico com foco em SLA, redução de avarias e priorização ETD.</p>
                 <button class="btn-detalhes" onclick="openModal('modalSuporteOut')">Ver Ficha Técnica</button>
             </div>
         </div>
@@ -678,120 +268,112 @@
 
 <div id="modalGIC" class="modal">
     <div class="modal-content">
-        <span class="close-modal" onclick="closeModal('modalGIC')">&times;</span>
-        <div class="modal-body">
+        <div class="modal-header">
+            <span class="close-modal" onclick="closeModal('modalGIC')">&times;</span>
             <h2>GIC - Gestão de Insumos Consumíveis</h2>
-            <h3>Visão Geral do Projeto</h3>
-            <p>Desenvolvido para resolver a falta de rastreabilidade e controle estruturado dos insumos consumíveis dentro do centro logístico.</p>
-            <h3>Problema Identificado</h3>
-            <ul>
-                <li>Baixa rastreabilidade e divergência entre estoque físico e sistêmico.</li>
-                <li>Rupturas frequentes e falta de visibilidade por endereço.</li>
-                <li>Decisões baseadas em percepção e não em dados.</li>
-                <li>Inventários mensais gerando grande prejuízo.</li>
-            </ul>
-            <h3>Arquitetura da Solução</h3>
-            <p><strong>1. Aplicativo Operacional:</strong> Registro de movimentações com PL ID único via AppSheet.</p>
-            <p><strong>2. Camada Técnica:</strong> Consolidação via SQL no BigQuery para tratamento de inconsistências.</p>
-            <h3>Resultados</h3>
-            <ul>
-                <li>Aumento da rastreabilidade e redução de rupturas.</li>
-                <li>Controle FIFO (dias armazenados) e status fiscal em tempo real.</li>
-            </ul>
+            <p>Arquitetura de Dados para Rastreabilidade de Inventário</p>
+        </div>
+        <div class="modal-body">
+            <div class="modal-grid">
+                <div class="modal-section">
+                    <h3><i class="fas fa-microchip"></i> Arquitetura da Solução</h3>
+                    <ul>
+                        <li><b>App Operacional:</b> Registro estruturado de Entradas (+), Saídas (-) e Transferências (=) via PL ID único.</li>
+                        <li><b>BigQuery SQL:</b> Processamento analítico em camadas (CTEs) para consolidação em tempo real.</li>
+                        <li><b>FIFO & Fiscal:</b> Controle por idade de estoque e status vinculado à Nota Fiscal.</li>
+                    </ul>
+                </div>
+                <div class="modal-section">
+                    <h3><i class="fas fa-code"></i> Diferencial Técnico (SQL)</h3>
+                    <ul>
+                        <li><b>LISTA_DEDUPLICADA:</b> Limpeza e padronização de master data.</li>
+                        <li><b>MOVIMENTACOES_TRATADAS:</b> Lógica contábil automatizada para classificação de origem/destino.</li>
+                        <li><b>ESTOQUE_FINAL:</b> Visibilidade completa incluindo endereços vazios (Full Visibility).</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="modal-section">
+                <h3><i class="fas fa-chart-pie"></i> Resultados Operacionais</h3>
+                <p>Transformação de movimentações manuais e desestruturadas em uma base de dados pronta para BI. <b>Resultados:</b> Aumento da acuracidade do inventário, eliminação de rupturas e visibilidade financeira por endereço de armazenagem.</p>
+                <div>
+                    <span class="tag-tech">SQL (BigQuery)</span>
+                    <span class="tag-tech">AppSheet</span>
+                    <span class="tag-tech">Google Sheets</span>
+                    <span class="tag-tech">Data Modeling</span>
+                </div>
+            </div>
         </div>
     </div>
 </div>
 
 <div id="modalSuporteOut" class="modal">
     <div class="modal-content">
-        <span class="close-modal" onclick="closeModal('modalSuporteOut')">&times;</span>
+        <div class="modal-header">
+            <span class="close-modal" onclick="closeModal('modalSuporteOut')">&times;</span>
+            <h2>SuporteOut - Gestão de Chamados Outbound</h2>
+            <p>Otimização de Qualidade e Priorização Logística</p>
+        </div>
         <div class="modal-body">
-            <h2> SuporteOut - Sistema de Gestão Outbound</h2>
-            <h3>Objetivo do Projeto</h3>
-            <p>Criar um ecossistema padronizado para registro e priorização de chamados, atacando diretamente a desorganização que afetava 40% dos indicadores operacionais.</p>
-            <h3> Desafios Enfrentados</h3>
-            <ul>
-                <li>Muitos itens avariados durante a expedição e falta de visibilidade dos ofensores.</li>
-                <li>Chamados desorganizados e ausência de priorização por SLA/ETD.</li>
-                <li>Impacto negativo direto nos indicadores de qualidade e perdas financeiras.</li>
-            </ul>
-            <h3>🛠️Estrutura Técnica</h3>
-            <p><strong>1. AppSheet & Google Sheets:</strong> Interface para registro pelo time operacional e painel de controle.</p>
-            <p><strong>2. Integração Google Chat:</strong> Notificações automáticas imediatas.</p>
-            <p><strong>3. Inteligência de Dados:</strong> Lógica de priorização automática por ETD.</p>
-            <h3> Impacto e Diferenciais</h3>
-            <ul>
-                <li><strong>Redução de Perdas:</strong> Análise de causa raiz.</li>
-                <li><strong>Eficiência Operacional:</strong> Fila de atendimento organizada.</li>
-                <li><strong>Gestão Orientada a Dados:</strong> Base estruturada para melhoria contínua.</li>
-            </ul>
-            <h3>Tecnologias:</h3>
-            <ul>
-                <li>AppSheet | Google Sheets | Google Chat Automations</li>
-            </ul>
+            <div class="modal-grid">
+                <div class="modal-section">
+                    <h3><i class="fas fa-search"></i> Problema Identificado</h3>
+                    <ul>
+                        <li>40% dos indicadores operacionais afetados por desorganização.</li>
+                        <li>Ausência de priorização por horário de saída (ETD).</li>
+                        <li>Muitos itens avariados e falta de visibilidade dos ofensores.</li>
+                    </ul>
+                </div>
+                <div class="modal-section">
+                    <h3><i class="fas fa-cogs"></i> Estrutura da Solução</h3>
+                    <ul>
+                        <li><b>Priorização Inteligente:</b> Fila organizada automaticamente por ETD.</li>
+                        <li><b>Google Chat:</b> Notificações automáticas para redução de tempo de resposta.</li>
+                        <li><b>Mensurável:</b> Cálculo de tempo médio de atendimento (SLA) automático.</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="modal-section">
+                <h3><i class="fas fa-rocket"></i> Impacto Estratégico</h3>
+                <p>O projeto transformou um processo informal em um fluxo rastreável e orientado a SLA. Garante maior previsibilidade operativa e gera uma base estruturada para análise de causa raiz de erros na expedição.</p>
+                <div>
+                    <span class="tag-tech">AppSheet</span>
+                    <span class="tag-tech">Google Workspace</span>
+                    <span class="tag-tech">Automation</span>
+                    <span class="tag-tech">SLA Management</span>
+                </div>
+            </div>
         </div>
     </div>
 </div>
 
 <section id="contato" class="contato">
-    <div class="section-title" style="color: var(--text-main); border-color: var(--accent);" data-aos="fade-up">Contato</div>
-    <p style="font-size: 20px; color: var(--text-sub); margin-bottom: 20px;">Email: <b>carlos.albe.siqueira@gmail.com</b></p>
-    <div class="social-buttons" data-aos="zoom-in">
-        <a href="https://www.linkedin.com/in/carlos-siqueira-100093347/" target="_blank" class="social-icon btn-linkedin" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-        <a href="https://wa.me/5511964365477" target="_blank" class="social-icon btn-whatsapp" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-        <a href="mailto:carlos.albe.siqueira@gmail.com" class="social-icon btn-email" title="Enviar E-mail"><i class="fas fa-envelope"></i></a>
+    <div class="section-title" data-aos="fade-up">Contato</div>
+    <p>Email: <b>carlos.albe.siqueira@gmail.com</b></p>
+    <div class="social-buttons">
+        <a href="https://www.linkedin.com/in/carlos-siqueira-100093347/" target="_blank" class="social-icon btn-linkedin"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://wa.me/5511964365477" target="_blank" class="social-icon btn-whatsapp"><i class="fab fa-whatsapp"></i></a>
+        <a href="mailto:carlos.albe.siqueira@gmail.com" class="social-icon btn-email"><i class="fas fa-envelope"></i></a>
     </div>
 </section>
 
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>
-    // Inicializar Animações de Scroll
     AOS.init({ duration: 1000, once: true });
-
-    // 1. Função Dark/Light Mode
-    function toggleTheme() {
-        const body = document.body;
-        const icon = document.getElementById('theme-icon');
-        body.classList.toggle('light-mode');
-        
-        if (body.classList.contains('light-mode')) {
-            icon.classList.replace('fa-moon', 'fa-sun');
-        } else {
-            icon.classList.replace('fa-sun', 'fa-moon');
-        }
-    }
-
-    // 3. Função Barra de Progresso
-    window.onscroll = function() { updateProgress() };
-    function updateProgress() {
+    window.onscroll = function() {
         var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
         var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
         var scrolled = (winScroll / height) * 100;
         document.getElementById("myBar").style.width = scrolled + "%";
+    };
+    function toggleTheme() {
+        document.body.classList.toggle('light-mode');
+        const icon = document.getElementById('theme-icon');
+        icon.classList.toggle('fa-moon'); icon.classList.toggle('fa-sun');
     }
-
-    // Funções de Modal
-    function openModal(modalId) {
-        document.getElementById(modalId).style.display = "block";
-        document.body.style.overflow = "hidden";
-    }
-    function closeModal(modalId) {
-        document.getElementById(modalId).style.display = "none";
-        document.body.style.overflow = "auto";
-    }
-    window.onclick = function(event) {
-        if (event.target.className === "modal") {
-            event.target.style.display = "none";
-            document.body.style.overflow = "auto";
-        }
-    }
+    function openModal(id) { document.getElementById(id).style.display = "block"; document.body.style.overflow = "hidden"; }
+    function closeModal(id) { document.getElementById(id).style.display = "none"; document.body.style.overflow = "auto"; }
+    window.onclick = function(e) { if(e.target.className==='modal') { e.target.style.display="none"; document.body.style.overflow="auto"; }}
 </script>
-
-<footer style="text-align: center; padding: 40px 8%; background: var(--bg-header); border-top: 1px solid var(--line); color: var(--text-sub); font-size: 14px;">
-    <p>© 2026 Carlos Siqueira. Desenvolvido integralmente em <b>HTML5, CSS3 e JavaScript puro</b>.</p>
-    <p style="margin-top: 5px; opacity: 0.7;">Focado em performance e código limpo.</p>
-</footer>
 
 </body>
 </html>
-
